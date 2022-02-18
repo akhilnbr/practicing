@@ -1,0 +1,18 @@
+//lString - big string
+//sString - small string
+//find the occurence  of smakll string in big string
+function callMe(lString, sString) {
+  var conststructString = '';
+  const newArray = lString.split('');
+  let arrayToStoreOccurence = [];
+  for (var i = 0; i <= newArray.length; i++) {
+    conststructString = conststructString + newArray[i];
+    if (conststructString.length == sString.length) {
+      arrayToStoreOccurence.push(conststructString);
+      i = i - (sString.length - 1);
+      conststructString = '';
+    }
+  }
+  console.log(arrayToStoreOccurence.filter((x) => x == sString).length);//Printing the lenght of total occurence.here it is 2
+}
+callMe('cbabcabca', 'bc');
